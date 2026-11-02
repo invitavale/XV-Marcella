@@ -555,7 +555,7 @@ function openLocation(location) {
 
 function sharePhotos() {
     // Ejemplo: aquí se debe colocar el enlace real a la carpeta de Google Drive.
-    window.open('https://photos.app.goo.gl/p9PGQHWrvLG1Bpj28', '_blank');
+    window.open('https://photos.app.goo.gl/zLCVSKUF2cg4dJYZ6', '_blank');
 }
 
 function showDressCode() {
@@ -580,7 +580,7 @@ function showGifts() {
 
 function confirmAttendance() {
     // Ejemplo: aquí se debe colocar el enlace real al formulario de Google Forms.
-    window.open('https://docs.google.com/forms/d/e/1FAIpQLSdIYoM33yAkMmS4DZCRVmO9_IE0gZT4eEw8cV0r2PgWlYE0Ag/viewform?usp=header', '_blank');
+    window.open('https://docs.google.com/forms/d/e/1FAIpQLScsaF_2CM-ycYNKssNEbb73jApPOR9GeVQ7emrzNu1XedCAUg/viewform?usp=publish-editor', '_blank');
 }
 
 // Sistema de Toast
@@ -874,4 +874,34 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', poner);
     else poner();
+})();
+
+
+// =========================================================
+// Pases por invitado: se lee del enlace.
+//   .../XV-Marcella/?p=1  -> "1 persona"
+//   .../XV-Marcella/?p=2  -> "2 personas"
+// También acepta ?pases=, ?personas= o ?invitados=. Sin número, no se muestra.
+// =========================================================
+(function pasesInvitacion() {
+    const mostrar = () => {
+        const caja = document.getElementById('paseInvitacion');
+        if (!caja) return;
+        let valor = null;
+        try {
+            const q = new URLSearchParams(window.location.search);
+            valor = q.get('p') || q.get('pases') || q.get('personas') || q.get('invitados');
+            if (!valor && window.location.hash) {
+                const hq = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+                valor = hq.get('p') || hq.get('pases');
+            }
+        } catch (e) {}
+        const n = parseInt(valor, 10);
+        if (!n || n < 1 || n > 50) return;
+        document.getElementById('paseCantidad').textContent = n;
+        document.getElementById('paseUnidad').textContent = n === 1 ? 'persona' : 'personas';
+        caja.hidden = false;
+    };
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mostrar);
+    else mostrar();
 })();

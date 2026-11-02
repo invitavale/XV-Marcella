@@ -2380,3 +2380,37 @@ body, .countdown-number, .event-details p, .footer-date, .section-subtitle, .rsv
 }
 .modal-text-dark strong { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500; font-size: 1.3rem; color: var(--oliva-700); }
 .dresscode-modal .color-dot { width: 34px; height: 34px; border-color: rgba(98,112,69,0.25); box-shadow: 0 2px 6px rgba(47,59,25,0.18); }
+
+/* Pase por invitado (debajo del contador) */
+.pase-invitacion {
+    position: relative; z-index: 1;
+    margin: 1.4rem auto 0;
+    max-width: 280px;
+    padding: 0.9rem 1.4rem 0.8rem;
+    text-align: center;
+    border: 1px solid var(--oliva-300);
+    border-radius: 1.2rem;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 4px rgba(98, 112, 69, 0.08);
+}
+.pase-invitacion[hidden] { display: none; }
+.pase-adorno {
+    position: absolute; top: -8px; left: 50%; translate: -50% 0;
+    width: 16px; height: 16px;
+    background: #FFFFFF var(--estrella) center / 14px 14px no-repeat;
+    border-radius: 50%;
+}
+.pase-texto {
+    margin: 0 !important;
+    font-family: 'Cormorant Garamond', Georgia, serif !important;
+    font-weight: 600 !important; font-size: 1rem !important;
+    color: var(--oliva-900) !important;
+}
+.pase-numero {
+    margin: 0.1rem 0 0 !important;
+    font-family: 'Playfair Display', Georgia, serif !important;
+    font-style: italic; font-weight: 500;
+    font-size: 1.55rem !important;
+    color: var(--oliva-700) !important;
+    font-variant-numeric: lining-nums;
+}
