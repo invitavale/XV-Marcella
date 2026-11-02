@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CCSB.css?v=37">
+    <link rel="stylesheet" href="CCSB.css?v=39">
     <style>
         /* Carrusel: 3 imágenes simultáneamente con foto central destacada */
         .carousel-track-container {
@@ -249,9 +249,14 @@
                 </div>
             </div>
             <div id="paseInvitacion" class="pase-invitacion" hidden>
-                <span class="pase-adorno" aria-hidden="true"></span>
-                <p class="pase-texto">Esta invitación es válida para</p>
-                <p class="pase-numero"><span id="paseCantidad">1</span> <span id="paseUnidad">persona</span></p>
+                <div class="pase-izq">
+                    <span class="pase-num" id="paseNum">1</span>
+                    <span class="pase-tag" id="paseTag">Pase</span>
+                </div>
+                <div class="pase-der">
+                    <p class="pase-texto">Esta invitación es válida para</p>
+                    <p class="pase-numero"><span id="paseCantidad">1</span> <span id="paseUnidad">persona</span></p>
+                </div>
             </div>
         </section>
 

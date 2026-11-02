@@ -900,6 +900,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!n || n < 1 || n > 50) return;
         document.getElementById('paseCantidad').textContent = n;
         document.getElementById('paseUnidad').textContent = n === 1 ? 'persona' : 'personas';
+        document.getElementById('paseNum').textContent = n;
+        document.getElementById('paseTag').textContent = n === 1 ? 'Pase' : 'Pases';
         caja.hidden = false;
     };
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', mostrar);
