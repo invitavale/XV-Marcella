@@ -1,15 +1,34 @@
 <!DOCTYPE html>
-<html lang="es" class="intro-done">
+<html lang="es" class="intro-lock">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marcella - Mis XV Años</title>
+    <meta name="description" content="Estás invitado a celebrar los XV años de Marcella · Sábado 21 de Noviembre de 2026 · Hotel Crowne Plaza, Salón Esmeralda.">
+    <!-- Vista previa al compartir por WhatsApp / redes -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Invitavale">
+    <meta property="og:url" content="http://invitavale.com/XV-Marcella/">
+    <meta property="og:title" content="Mis XV Años · Marcella">
+    <meta property="og:description" content="Sábado 21 de Noviembre de 2026 · 8:00 p.m. · Hotel Crowne Plaza, Salón Esmeralda. ¡Te espero en mi bosque encantado!">
+    <meta property="og:image" content="http://invitavale.com/XV-Marcella/portada-whatsapp.jpg">
+    <meta property="og:image:secure_url" content="https://invitavale.com/XV-Marcella/portada-whatsapp.jpg">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Marcella, XV Años">
+    <meta property="og:locale" content="es_DO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mis XV Años · Marcella">
+    <meta name="twitter:description" content="Sábado 21 de Noviembre de 2026 · Hotel Crowne Plaza, Salón Esmeralda">
+    <meta name="twitter:image" content="http://invitavale.com/XV-Marcella/portada-whatsapp.jpg">
+    <link rel="preload" as="image" href="intro-poster.jpg">
     <link rel="preload" as="image" href="foto0.jpg">
     <link rel="preload" as="image" href="mariposa.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CCSB.css?v=35">
+    <link rel="stylesheet" href="CCSB.css?v=36">
     <style>
         /* Carrusel: 3 imágenes simultáneamente con foto central destacada */
         .carousel-track-container {
@@ -149,7 +168,22 @@
 </head>
 <body>
     <div class="main-center">
-        <!-- Intro: aquí irá el nuevo video de entrada (pendiente) -->
+        <!-- Intro: video de la puerta. Al tocarlo arranca todo (video + música) -->
+        <div id="introVideo" class="intro-video" role="button" tabindex="0"
+             aria-label="Toca para abrir la invitación de Marcella">
+            <video id="doorVideo" poster="intro-poster.jpg"
+                   playsinline webkit-playsinline preload="auto">
+                <source src="intro.mp4" type="video/mp4">
+                <source src="intro.webm" type="video/webm">
+            </video>
+            <div class="intro-light"></div>
+            <button class="intro-hint" type="button" tabindex="-1">
+                <span class="intro-play" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="16" height="16"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>
+                </span>
+                Toca para abrir
+            </button>
+        </div>
 
         <!-- Música de fondo -->
         <audio id="bgMusic" src="musica.mp3" loop preload="auto"></audio>

@@ -542,8 +542,8 @@ document.addEventListener('DOMContentLoaded', () => {
 function openLocation(location) {
     // Enlaces de ejemplo (dirección ficticia) - ceremonia y celebración
     const mapsUrls = {
-        ceremony: "https://www.google.com/maps/search/?api=1&query=Crowne+Plaza+Santo+Domingo",
-        reception: "https://www.google.com/maps/search/?api=1&query=Crowne+Plaza+Santo+Domingo"
+        ceremony: "https://maps.app.goo.gl/MKLFhBG1wPNc8PCD8",
+        reception: "https://maps.app.goo.gl/MKLFhBG1wPNc8PCD8"
     };
     const mapsUrl = mapsUrls[location] || mapsUrls.ceremony;
     window.open(mapsUrl, '_blank');
