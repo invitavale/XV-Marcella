@@ -2503,3 +2503,182 @@ body, .countdown-number, .event-details p, .footer-date, .section-subtitle, .rsv
     border-top: 1px solid rgba(169, 180, 138, 0.6);
 }
 .countdown-section { padding-bottom: 4rem !important; }
+
+/* =========================================================
+   Modal de ideas de regalo
+   ========================================================= */
+.regalos-modal {
+    position: relative;
+    width: min(92vw, 460px);
+    max-height: 86vh;
+    max-height: 86svh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    padding: 1.6rem 1.15rem 1.4rem;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 40%, #FBE7EC 100%);
+    border: 1px solid var(--oliva-300);
+    border-radius: 1.5rem;
+    box-shadow: 0 0 0 4px rgba(98, 112, 69, 0.10), 0 24px 48px -14px rgba(47, 59, 25, 0.4);
+    color: var(--oliva-900);
+}
+.regalos-modal .modal-close { color: var(--oliva-700) !important; position: absolute; top: 0.6rem; right: 0.8rem; background: none; border: none; font-size: 1.9rem; line-height: 1; cursor: pointer; }
+.regalos-icono { width: 74px; height: auto; display: block; margin: 0 auto 0.2rem; filter: drop-shadow(0 4px 8px rgba(70, 85, 43, 0.18)); }
+.regalos-titulo {
+    margin: 0;
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500;
+    font-size: 1.85rem; color: var(--oliva-700);
+}
+.regalos-intro {
+    margin: 0.2rem 0 1rem;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 0.98rem;
+    color: var(--oliva-500);
+}
+.regalos-lista { display: flex; flex-direction: column; gap: 0.5rem; text-align: left; }
+.regalo-cat {
+    background: #FFFFFF;
+    border: 1px solid rgba(169, 180, 138, 0.55);
+    border-radius: 0.95rem;
+    overflow: hidden;
+    transition: box-shadow 0.25s, border-color 0.25s;
+}
+.regalo-cat[open] { border-color: var(--oliva-300); box-shadow: 0 8px 18px -12px rgba(47, 59, 25, 0.45); }
+.regalo-cat summary {
+    list-style: none;
+    display: flex; align-items: center; gap: 0.7rem;
+    padding: 0.7rem 0.85rem;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+}
+.regalo-cat summary::-webkit-details-marker { display: none; }
+.regalo-emoji {
+    flex: 0 0 38px; height: 38px;
+    display: grid; place-items: center;
+    font-size: 1.15rem;
+    background: #FBE7EC;
+    border-radius: 50%;
+    box-shadow: inset 0 0 0 1px rgba(237, 179, 194, 0.7);
+}
+.regalo-titulo {
+    flex: 1; display: flex; flex-direction: column;
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500;
+    font-size: 1.12rem; color: var(--oliva-700); line-height: 1.2;
+}
+.regalo-titulo small {
+    font-family: 'Cormorant Garamond', Georgia, serif; font-style: normal; font-weight: 600;
+    font-size: 0.86rem; color: #7A7F68; margin-top: 0.1rem;
+}
+.regalo-flecha {
+    flex: 0 0 22px; height: 22px; border-radius: 50%;
+    background: var(--salvia-100);
+    position: relative;
+    transition: transform 0.25s;
+}
+.regalo-flecha::before {
+    content: ""; position: absolute; left: 50%; top: 45%;
+    width: 6px; height: 6px;
+    border-right: 1.5px solid var(--oliva-700); border-bottom: 1.5px solid var(--oliva-700);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+.regalo-cat[open] .regalo-flecha { transform: rotate(180deg); }
+.regalo-cuerpo {
+    padding: 0.1rem 1rem 0.95rem 3.85rem;
+    border-top: 1px dashed rgba(169, 180, 138, 0.6);
+    margin: 0 0.85rem;
+    padding-left: 3rem;
+    animation: regalo-abre 0.3s ease;
+}
+@keyframes regalo-abre { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.regalo-sub {
+    margin: 0.7rem 0 0.15rem !important;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700;
+    font-size: 0.74rem !important; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--oliva-500) !important;
+}
+.regalo-lista { list-style: none; margin: 0.45rem 0 0; padding: 0; }
+.regalo-sub + .regalo-lista { margin-top: 0.1rem; }
+.regalo-lista li {
+    position: relative;
+    padding: 0.14rem 0 0.14rem 1rem;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.05rem;
+    color: var(--oliva-900);
+    display: flex; align-items: center; gap: 0.4rem;
+}
+.regalo-lista li::before {
+    content: ""; position: absolute; left: 0; top: 50%;
+    width: 6px; height: 6px; margin-top: -3px;
+    background: var(--estrella) center / contain no-repeat;
+}
+.regalo-color {
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--c);
+    box-shadow: 0 0 0 1px rgba(0,0,0,0.12);
+    flex: 0 0 auto;
+}
+.regalo-links { display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 0.8rem; }
+.regalo-links a {
+    display: inline-flex; align-items: center; gap: 0.3rem;
+    padding: 0.38rem 0.85rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #6E7D4E 0%, var(--oliva-500) 50%, #535F38 100%);
+    color: #FFFFFF; text-decoration: none;
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    box-shadow: 0 6px 12px -8px rgba(47, 59, 25, 0.6);
+}
+.regalo-links a span { font-size: 0.8rem; opacity: 0.85; }
+.regalos-giftcards {
+    margin-top: 1.1rem;
+    padding: 1rem 0.9rem 1.05rem;
+    border-radius: 1rem;
+    background: linear-gradient(160deg, #6E7D4E 0%, #5A6840 60%, #4E5A33 100%);
+    color: #FFFFFF;
+    position: relative;
+}
+.regalos-giftcards::before {
+    content: ""; position: absolute; inset: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 0.75rem; pointer-events: none;
+}
+.regalos-gc-titulo {
+    margin: 0 0 0.65rem !important;
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 500;
+    font-size: 1.3rem !important; color: #FFFFFF !important;
+}
+.regalos-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem; position: relative; }
+.regalos-chips span {
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.95);
+    color: var(--oliva-700);
+    font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 0.92rem;
+}
+.regalos-gracias {
+    margin: 1rem 0 0 !important;
+    font-family: 'Playfair Display', Georgia, serif; font-style: italic;
+    font-size: 1rem !important; color: var(--oliva-700) !important;
+}
+#giftsModal { background: rgba(30, 36, 18, 0.55); }
+
+/* Miniaturas de producto al lado de cada categoría */
+.regalo-img {
+    flex: 0 0 64px; width: 64px; height: 64px;
+    display: grid; place-items: center;
+    padding: 5px;
+    border-radius: 14px;
+    background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #FDF1F4 70%, #FBE7EC 100%);
+    box-shadow: inset 0 0 0 1px rgba(237, 179, 194, 0.65), 0 4px 10px -6px rgba(47, 59, 25, 0.35);
+}
+.regalo-img img { width: 100%; height: 100%; object-fit: contain; display: block; filter: drop-shadow(0 2px 3px rgba(47, 59, 25, 0.15)); }
+.regalo-cat summary { padding: 0.6rem 0.8rem; gap: 0.8rem; }
+.regalo-cuerpo { padding-left: 4.4rem !important; }
+.regalos-gc-img {
+    display: block; position: relative;
+    width: 100%; max-width: 300px; height: auto;
+    margin: 0 auto 0.8rem;
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 0.8rem;
+}
+.regalo-img { overflow: hidden; }
+.regalo-img img { width: auto !important; height: auto !important; max-width: 100%; max-height: 54px; }

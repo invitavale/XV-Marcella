@@ -575,8 +575,32 @@ function closeDressCodeModal() {
 }
 
 function showGifts() {
-    window.open('https://cuentapro11.github.io/numero-cuenta-ejemplo/', '_blank');
+    const modal = document.getElementById('giftsModal');
+    if (!modal) return;
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    const caja = modal.querySelector('.regalos-modal');
+    if (caja) caja.scrollTop = 0;
 }
+
+function closeGiftsModal() {
+    const modal = document.getElementById('giftsModal');
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeGiftsModal();
+});
+
+// En la lista de regalos, abrir una categoría cierra las demás
+document.addEventListener('DOMContentLoaded', () => {
+    const cats = document.querySelectorAll('.regalo-cat');
+    cats.forEach((d) => d.addEventListener('toggle', () => {
+        if (d.open) cats.forEach((o) => { if (o !== d) o.open = false; });
+    }));
+});
 
 function confirmAttendance() {
     // Ejemplo: aquí se debe colocar el enlace real al formulario de Google Forms.

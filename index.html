@@ -28,7 +28,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="CCSB.css?v=39">
+    <link rel="stylesheet" href="CCSB.css?v=41">
     <style>
         /* Carrusel: 3 imágenes simultáneamente con foto central destacada */
         .carousel-track-container {
@@ -381,13 +381,13 @@
         <section class="gifts-section" data-butterflies="2">
             <div class="gifts-container">
                 <h2 class="section-title">Regalos</h2>
-                <p class="section-subtitle">Si deseas regalarme algo más que tu hermosa presencia.</p>
+                <p class="section-subtitle">Tu presencia es mi mejor regalo. Si deseas obsequiarme algo, aquí te dejo algunas ideas que me encantarían.</p>
                 
                 <div class="gift-icon modern-icon">
                     <img src="bosque/regalo.webp" alt="Regalo" class="icono-bosque">
                 </div>
 
-                <button class="btn-wedding" onclick="showGifts()">Ver más</button>
+                <button class="btn-wedding" onclick="showGifts()">Ver ideas de regalo</button>
             </div>
         </section>
 
@@ -431,6 +431,148 @@
                 <div class="dresscode-colors">
                     <span class="color-dot" style="background:#F2B8C6;" title="Rosado reservado para la quinceañera"></span>
                 </div>
+            </div>
+        </div>
+
+
+        <!-- Modal Regalos -->
+        <div id="giftsModal" class="modal-overlay" onclick="closeGiftsModal()">
+            <div class="regalos-modal" role="dialog" aria-modal="true" aria-labelledby="regalosTitulo" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeGiftsModal()" aria-label="Cerrar">&times;</button>
+                <img src="bosque/regalo.webp" alt="" class="regalos-icono" aria-hidden="true">
+                <h2 id="regalosTitulo" class="regalos-titulo">Ideas de Regalo</h2>
+                <p class="regalos-intro">Toca cada categoría para ver los detalles</p>
+                <div class="regalos-lista">
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/skincare.webp" alt="Skincare" loading="lazy"></span><span class="regalo-titulo">Skincare<small>Rhode · La Roche-Posay · CeraVe</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <p class="regalo-sub">Rhode</p>
+                            <ul class="regalo-lista">
+                                <li>Sets de skincare</li>
+                            </ul>
+                            <p class="regalo-sub">La Roche-Posay</p>
+                            <ul class="regalo-lista">
+                                <li>Limpiador facial</li>
+                                <li>Crema para el acné</li>
+                                <li>Crema hidratante</li>
+                            </ul>
+                            <p class="regalo-sub">CeraVe</p>
+                            <ul class="regalo-lista">
+                                <li>Productos de cuidado facial</li>
+                            </ul>
+                            <div class="regalo-links">
+                                <a href="https://www.laroche-posay.es/buscar?q=Crema" target="_blank" rel="noopener">La Roche-Posay <span aria-hidden="true">↗</span></a>
+                                <a href="https://www.cerave.com/" target="_blank" rel="noopener">CeraVe <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/ropa.webp" alt="Ropa" loading="lazy"></span><span class="regalo-titulo">Ropa<small>Talla S / M · Bershka · Zara</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Talla <strong>S / M</strong></li>
+                                <li>Bershka</li>
+                                <li>Zara</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/zapatos.webp" alt="Zapatos" loading="lazy"></span><span class="regalo-titulo">Zapatos<small>Adidas Samba y Gazelle</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <p class="regalo-sub">Adidas</p>
+                            <ul class="regalo-lista">
+                                <li>Samba</li>
+                                <li>Gazelle Silver</li>
+                                <li>Gazelle blanco con rosa</li>
+                                <li>Gazelle marrón con rosa</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/bath.webp" alt="Bath & Body Works" loading="lazy"></span><span class="regalo-titulo">Bath &amp; Body Works<small>Fragancias dulces y sets</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Fragancias de vainilla</li>
+                                <li>Fragancias dulces (Sweet)</li>
+                                <li>Olor a caramelo</li>
+                                <li>Sets de baño y cuerpo</li>
+                            </ul>
+                            <div class="regalo-links">
+                                <a href="https://share.google/7jnpUeUiGNWyCjBx8" target="_blank" rel="noopener">Bath &amp; Body Works <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/joyeria.webp" alt="Joyería" loading="lazy"></span><span class="regalo-titulo">Joyería<small>Zarcillos · Pulseras · Collares</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <p class="regalo-sub">Colores favoritos</p>
+                            <ul class="regalo-lista">
+                                <li><span class="regalo-color" style="--c:#D4AF61"></span>Dorado</li>
+                                <li><span class="regalo-color" style="--c:#F2B8C6"></span>Rosa</li>
+                                <li><span class="regalo-color" style="--c:#7FA7D6"></span>Azul</li>
+                                <li><span class="regalo-color" style="--c:#1F7A55"></span>Verde esmeralda</li>
+                            </ul>
+                            <p class="regalo-sub">Piezas</p>
+                            <ul class="regalo-lista">
+                                <li>Zarcillos</li>
+                                <li>Pulseras</li>
+                                <li>Collares</li>
+                            </ul>
+                            <div class="regalo-links">
+                                <a href="https://kbstores.com.do/search?type=product%2Carticle%2Cpage%2Ccollection&q=Verde" target="_blank" rel="noopener">KB Stores <span aria-hidden="true">↗</span></a>
+                            </div>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/accesorios.webp" alt="Accesorios" loading="lazy"></span><span class="regalo-titulo">Accesorios<small>Lentes de sol · Carteras</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Lentes de sol</li>
+                                <li>Carteras H&amp;M o Zara</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/relojes.webp" alt="Relojes" loading="lazy"></span><span class="regalo-titulo">Relojes<small>Apple Watch · Casio</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Apple Watch</li>
+                                <li>Casio</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/makeup.webp" alt="Makeup" loading="lazy"></span><span class="regalo-titulo">Makeup<small>Gloss · Rubores</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Gloss</li>
+                                <li>Blushes (rubores)</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/cuidado.webp" alt="Cuidado personal" loading="lazy"></span><span class="regalo-titulo">Cuidado personal<small>Sets de cuidado personal</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Set de cuidado personal</li>
+                            </ul>
+                        </div>
+                    </details>
+                    <details class="regalo-cat">
+                        <summary><span class="regalo-img"><img src="regalos/rizadora.webp" alt="Rizadora" loading="lazy"></span><span class="regalo-titulo">Hair tools<small>Rizadora</small></span><span class="regalo-flecha" aria-hidden="true"></span></summary>
+                        <div class="regalo-cuerpo">
+                            <ul class="regalo-lista">
+                                <li>Rizadora para el cabello</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+                <div class="regalos-giftcards">
+                    <p class="regalos-gc-titulo">Gift Cards</p>
+                    <img src="regalos/giftcards.webp" alt="Gift cards" class="regalos-gc-img" loading="lazy">
+                    <div class="regalos-chips"><span>KB Stores</span><span>Zara</span><span>Stradivarius</span><span>H&amp;M</span><span>Bath &amp; Body Works</span><span>Victoria's Secret</span></div>
+                </div>
+                <p class="regalos-gracias">¡Gracias por tu cariño! — Marcella</p>
             </div>
         </div>
 
